@@ -1,11 +1,15 @@
 import streamlit as st
 import openai
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 st.title("Tích hợp ChatGPT vào ứng dụng Python")
 
 # Cài đặt thông tin model
 model = "gpt-3.5-turbo"#"text-davinci-003"
-openai.api_key = "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"
+openai.api_key = os.getenv("api_key")
 messages = []
 
 # Hàm để gọi đến OpenAPI / Phần ChatGPT
